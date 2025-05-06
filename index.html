@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Reply With Scripture</title>
+    <link rel="stylesheet" href="bible.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
+    <script src="bible.js" defer></script>
+</head>
+
+<body>
+<!-- LOGO AND NAVIGATION -->
+    <header> 
+        <div class="container">
+            <img src="images/RWS Logo.jpeg" alt="Reply With Scripture Logo" class="logo">
+            <button id="nav-toggle" aria-label="Toggle Navigation">&#9776;</button>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#study">Study</a></li>
+                    <li><a href="#history">History</a></li>
+                    <li><a href="#teaching">Teaching</a></li>
+                    <li><a href="#bible">Bible</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        <div class="spacer"></div> <!-- Invisible element to balance the logo -->
+    </header>
+
+<!-- MAIN PAGE CONTENT -->
+    <main class="container-wrapper"> 
+
+<!-- HOME LINK AND CAROUSEL-->        
+        <section id="home" class="carousel">
+            <div class="slider">
+                <div>
+                    <figure>
+                        <img src="images/Bible.jpg" alt="Bible Study">
+                        <figcaption>The Bible</figcaption>
+                    </figure>
+                </div>
+                <div>
+                    <figure>
+                        <img src="images/1 Peter.png" alt="Ancient Scriptures">
+                        <figcaption>Ancient Scriptures</figcaption>
+                    </figure>
+                </div>
+                <div>
+                    <figure>
+                        <img src="images/Israel.jpg" alt="Biblical Lands">
+                        <figcaption>Biblical Lands</figcaption>
+                    </figure>
+                </div>
+            </div>
+            <!-- Lightbox Modal -->
+                <div id="lightbox-modal">
+                    <span class="close-lightbox">&times;</span>
+                    <img class="lightbox-content" id="lightbox-img" alt="Expanded view">
+                </div>
+        </section>
+
+<!-- DAILY VERSE -->
+        <section id="daily-verse" class="container">
+            <h2>Daily Verse</h2>
+            <div id="verse-display">Loading verse...</div>
+        </section>
+
+<!-- STUDY -->
+        <section id="study" class="container">
+            <h2>Study the Word</h2>
+            <div id="accordion">
+                <h3>Contextual Reading</h3>
+                <div><p>Understand scripture in its proper historical and cultural context. Respond in confidence</p></div>
+                <h3>Verse Analysis</h3>
+                <div><p>Go further into the meanings behind scripture using concordances, commentaries, and other scholarly resources.</p></div>
+                <h3>Cross References</h3>
+                <div><p>Discover connections throughout the Bible and archeology.</p></div>
+            </div>
+        </section>
+
+<!-- HISTORY -->
+        <section id="history" class="container">
+            <h2>History of the Bible</h2>
+            <p>The Bible has been preserved for millennia, originating in ancient Hebrew, Aramaic, and Greek manuscripts...</p>
+            <div>
+                <figure>
+                    <img src="images/1 Peter.png" alt="Ancient Manuscript" class="responsive">
+                    <figcaption>p.14 1 Peter 3:11-16</figcaption>
+                </figure>    
+            </div>
+            <!-- Lightbox Modal -->
+            <div id="lightbox-modal">
+                <span class="close-lightbox">&times;</span>
+                <img class="lightbox-content" id="lightbox-img" alt="Expanded view">
+            </div>
+        </section>
+
+<!-- TEACHING -->
+        <section id="teaching" class="container">
+            <h2>Teaching Tools</h2>
+            <form id="note-form">
+                <label for="favoriteVerse">Your Favorite Verse:</label>
+                <input type="text" id="favoriteVerse" name="favoriteVerse" required>
+                <button type="submit">Save</button>
+            </form>
+            <div id="saved-verse"></div>
+        </section>
+
+<!-- BIBLE -->
+        <section id="bible" class="container">
+            <h2>Genesis 1</h2>
+            <div id="text"></div>
+            <div id="footnotes">
+              <h4>Footnotes</h4>
+              <ul id="footnote-list"></ul>
+            </div>
+        </section>
+
+<!-- CONTACT -->
+        <section id="contact" class="container">
+            <h2>Contact</h2>
+            <p>Please feel free to message us about general inquiries, fixes, or suggestions.</p>
+            <form id="contact-form">
+                <div class="form-row">
+                    <div>
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div>
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+        
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone">
+        
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+        
+                <fieldset>
+                    <legend>Preferred Contact Method</legend>
+                    <label><input type="radio" name="contactMethod" value="email" checked> Email</label>
+                    <label><input type="radio" name="contactMethod" value="phone"> Phone</label>
+                </fieldset>
+        
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+        
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+<!-- FOOTER -->
+        <footer id="footer" class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2025 Reply With Scripture. All rights reserved.</p>
+                    <p>Email: info@rws.com | Phone: (123) 456-7890</p>
+                </div>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank"><img src="images/Facebook.png" alt="Facebook"></a>
+                    <a href="https://twitter.com" target="_blank"><img src="images/Twitter.png" alt="Twitter"></a>
+                    <a href="https://instagram.com" target="_blank"><img src="images/Instagram.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </footer>
+
+    </main> <!-- End of containing wrapper content -->
+
+</body>
+
+</html>
+
+ 
